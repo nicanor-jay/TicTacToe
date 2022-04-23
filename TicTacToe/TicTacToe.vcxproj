@@ -140,17 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
-    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
-    <ClCompile Include="square.cpp" />
     <ClCompile Include="TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
-    <ClInclude Include="game.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="square.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

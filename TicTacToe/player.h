@@ -5,18 +5,13 @@ using namespace std;
 class player
 {
 private:
-	std::string name;
-	char symbol;
-
+	string playerName;
+	char playerSymbol;
 public:
 	//Constructor
-	player(std::string playerName, char playerSymbol);
+	player(string name, char symbol);
 
-	//getters
-	std::string getName() const;
-
-	char getSymbol() const;
-	
-
+	//Getter
+	string getPlayerName();
 };
 

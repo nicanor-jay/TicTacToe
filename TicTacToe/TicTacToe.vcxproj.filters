@@ -21,30 +21,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="square.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
+    <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="square.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
