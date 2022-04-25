@@ -8,10 +8,16 @@ private:
 	string playerName;
 	char playerSymbol;
 public:
-	//Constructor
+	//Constructors
+	player();
 	player(string name, char symbol);
+
+	//Setters
+	void setPlayerName(string name);
+	void setPlayerSymbol(char sym);
 
 	//Getter
 	string getPlayerName();
+	char getPlayerSymbol();
 };
 

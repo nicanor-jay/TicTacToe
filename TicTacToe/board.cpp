@@ -4,7 +4,7 @@
 using namespace std;
 board::board() {
     for (int i = 0; i < 9; i++) {
-        this->gameBoard[i] = ' ';
+        this->setBoardValue(i, ' ');
     }
 }
 

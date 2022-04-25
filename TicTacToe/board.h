@@ -2,7 +2,8 @@
 class board
 {
 private:
-	char gameBoard[9];
+	char gameBoard[9]; 
+
 public:
 	//Constructor
 	board();
