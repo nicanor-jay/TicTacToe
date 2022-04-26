@@ -55,18 +55,72 @@ void game::gameLoop() {
 		else {
 			this->gameBoard.setBoardValue(rowColPos, this->p2.getPlayerSymbol());
 		}
+
+		if (checkForWin(rowColPos)) {
+			if (whoseTurn) {
+				cout << p1.getPlayerName() << " has won!\n";
+			}
+			else {
+				cout << p2.getPlayerName() << " has won!\n";
+			}
+			this->gameBoard.printBoard();
+
+			break;
+		}
 		
 		this->whoseTurn = !whoseTurn;
 	}
 }
 
-bool game::checkForWin(int pos) {
+bool game::checkForWin(int pos[]) {
+	char currChar = gameBoard.getBoardValue(pos);
+	int rowPos = pos[0];
+	int colPos = pos[1];
 
 	//Check Horizontal
-	return true;
+	for (int i = 0; i < 3; i++) {
+		if (gameBoard.getBoardValue(rowPos,i) != currChar && gameBoard.getBoardValue(rowPos, colPos) != ' ') {
+			break;
+		}
+		if (i == 3 - 1) {
+			return true;
+		}
+	}
 
 	//Check Vertical
+	for (int i = 0; i < 3; i++) {
+		if (gameBoard.getBoardValue(i, colPos) != currChar && gameBoard.getBoardValue(rowPos, colPos) != ' ') {
+			break;
+		}
+		if (i == 3 - 1) {
+			return true;
+		}
+	}
 
 	//Check Diagonal
+	if (rowPos == colPos) {
+		//we're on a diagonal
+		for (int i = 0; i < 3; i++) {
+			if (gameBoard.getBoardValue(i, i) != currChar) {
+				break;
+			}
+			if (i == 3 - 1) {
+				return true;
+			}
+		}
+	}
+
+	//Check Anti-Diagonal
+	if (rowPos + colPos == 3 - 1) {
+		for (int i = 0; i < 3; i++) {
+			if (gameBoard.getBoardValue(i,(3 - 1) - i) != currChar)
+				break;
+			if (i == 3 - 1) {
+				return true;
+			}
+		}
+	}
+
+	return false;
 
 }

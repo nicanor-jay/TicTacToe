@@ -24,6 +24,11 @@ char board::getBoardValue(int pos[]) {
 	return this->gameBoard[pos[0]][pos[1]];
 }
 
+char board::getBoardValue(int rowPos, int colPos) {
+    return this->gameBoard[rowPos][colPos];
+}
+
+
 void board::printBoard() {
     int counter = 0;
 

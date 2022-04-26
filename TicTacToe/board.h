@@ -11,8 +11,9 @@ public:
 	//Setter
 	void setBoardValue(int pos[], char val);
 
-	//Getter
+	//Getters
 	char getBoardValue(int pos[]);
+	char getBoardValue(int rowPos, int colPos);
 
 	//Print game board
 	void printBoard();

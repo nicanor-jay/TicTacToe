@@ -27,7 +27,7 @@ public:
 	void gameLoop();
 
 	//Win Condition Check;
-	bool checkForWin(int pos);
+	bool checkForWin(int pos[]);
 
 };
 
