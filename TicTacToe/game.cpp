@@ -1,12 +1,14 @@
 #include "game.h"
 #include <string>
 #include <iostream>
+#include <stdio.h>
+#include <ctype.h>
 
 using namespace std;
 game::game() {
-	setInfo();
+	cout << "Welcome to TicTacToe!\n";
 
-	//Game Loop
+	setInfo();
 	gameLoop();
 
 	//Check For Win
@@ -45,9 +47,19 @@ void game::gameLoop() {
 		cout << "Enter a position (Starts at 0!):\n";
 		cin >> pos;
 
+		
+
 		//CONVERT POS TO ROWPOS AND COLPOS
 		rowColPos[0] = pos / 3;
 		rowColPos[1] = pos % 3;
+
+		while (gameBoard.getBoardValue(rowColPos)!= ' ') {
+			cout << "Position invalid. Please try again:\n";
+			cin >> pos;
+
+			rowColPos[0] = pos / 3;
+			rowColPos[1] = pos % 3;
+		}
 
 		if (whoseTurn) {
 			this->gameBoard.setBoardValue(rowColPos, this->p1.getPlayerSymbol());

@@ -16,8 +16,6 @@ board::board() {
 void board::setBoardValue(int pos[], char val) {
     
 	this->gameBoard[pos[0]][pos[1]] = val;
-
-    cout << "setting " << pos[0] << ", " << pos[1] << " to " << val << endl;
 }
 
 char board::getBoardValue(int pos[]) {
