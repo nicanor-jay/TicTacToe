@@ -10,6 +10,8 @@ private:
 
 	board gameBoard;
 	bool playerHasWon;
+
+	int turnCounter;
 	
 	//int player1Score;
 	//int player2Score;

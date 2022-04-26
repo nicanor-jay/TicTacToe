@@ -36,6 +36,7 @@ void game::setInfo() {
 
 	this->playerHasWon = false;
 	this->whoseTurn = true;
+	this->turnCounter = 0;
 }
 
 void game::gameLoop() {
@@ -68,15 +69,24 @@ void game::gameLoop() {
 			this->gameBoard.setBoardValue(rowColPos, this->p2.getPlayerSymbol());
 		}
 
+
 		if (checkForWin(rowColPos)) {
+			this->gameBoard.printBoard();
 			if (whoseTurn) {
 				cout << p1.getPlayerName() << " has won!\n";
 			}
 			else {
 				cout << p2.getPlayerName() << " has won!\n";
 			}
-			this->gameBoard.printBoard();
+			
+			break;
+		}
+		turnCounter++;
+		cout << "TURN: " << turnCounter << endl;
 
+		if (turnCounter == 9) {
+			this->gameBoard.printBoard();
+			cout << "The match is a TIE!\n";
 			break;
 		}
 		
