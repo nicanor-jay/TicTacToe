@@ -32,28 +32,41 @@ void game::setInfo() {
 	this->p2.setPlayerName(player2Name);
 	this->p2.setPlayerSymbol(player2Symbol);
 
+	this->playerHasWon = false;
 	this->whoseTurn = true;
 }
 
 void game::gameLoop() {
-	while (true) {
-		int pos;
+	while (!this->playerHasWon) {
+		int pos, rowPos, colPos;
+		int rowColPos[2];
 
 		this->gameBoard.printBoard();
 		cout << "Enter a position (Starts at 0!):\n";
 		cin >> pos;
 
+		//CONVERT POS TO ROWPOS AND COLPOS
+		rowColPos[0] = pos / 3;
+		rowColPos[1] = pos % 3;
+
 		if (whoseTurn) {
-			this->gameBoard.setBoardValue(pos, this->p1.getPlayerSymbol());
+			this->gameBoard.setBoardValue(rowColPos, this->p1.getPlayerSymbol());
 		}
 		else {
-			this->gameBoard.setBoardValue(pos, this->p2.getPlayerSymbol());
+			this->gameBoard.setBoardValue(rowColPos, this->p2.getPlayerSymbol());
 		}
 		
 		this->whoseTurn = !whoseTurn;
 	}
 }
 
-bool game::checkForWin() {
+bool game::checkForWin(int pos) {
+
+	//Check Horizontal
+	return true;
+
+	//Check Vertical
+
+	//Check Diagonal
 
 }

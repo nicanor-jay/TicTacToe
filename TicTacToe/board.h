@@ -2,17 +2,17 @@
 class board
 {
 private:
-	char gameBoard[9]; 
+	char gameBoard[3][3];
 
 public:
 	//Constructor
 	board();
 
 	//Setter
-	void setBoardValue(int pos, char val);
+	void setBoardValue(int pos[], char val);
 
 	//Getter
-	char getBoardValue(int pos);
+	char getBoardValue(int pos[]);
 
 	//Print game board
 	void printBoard();

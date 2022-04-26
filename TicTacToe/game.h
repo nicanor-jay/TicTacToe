@@ -9,6 +9,7 @@ private:
 	player p2;
 
 	board gameBoard;
+	bool playerHasWon;
 	
 	//int player1Score;
 	//int player2Score;
@@ -26,7 +27,7 @@ public:
 	void gameLoop();
 
 	//Win Condition Check;
-	bool checkForWin();
+	bool checkForWin(int pos);
 
 };
 
